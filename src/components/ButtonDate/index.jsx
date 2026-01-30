@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { DateRangePicker } from "react-date-range";
+import { DateRangePicker } from "react-date-range"; // biblioteca responsavel por renderizar o calandario
 import {
+  // importa funções da biblioteca date-fns para manipular as datas
   startOfDay,
   endOfDay,
   subDays,
@@ -11,6 +12,8 @@ import { createStaticRanges } from "react-date-range";
 
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+
+import { Container } from "./styles";
 
 export function ButtonDate() {
   const [open, setOpen] = useState(false);
@@ -55,29 +58,15 @@ export function ButtonDate() {
   ]);
 
   return (
-    <div style={{ position: "relative" }}>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{
-          padding: "8px 12px",
-          borderRadius: "8px",
-          background: "#1f2937",
-          color: "#fff",
-          border: "1px solid #374151",
-        }}
-      >
-        📅 {ranges[0].startDate.toLocaleDateString()} -{" "}
-        {ranges[0].endDate.toLocaleDateString()}
+    <Container style={{}}>
+      <button id="dateButton" onClick={() => setOpen(!open)}>
+        📅
+        {/*  {ranges[0].startDate.toLocaleDateString()} -{" "}
+        {ranges[0].endDate.toLocaleDateString()} */}
       </button>
 
       {open && (
-        <div
-          style={{
-            position: "absolute",
-            top: "48px",
-            zIndex: 100,
-          }}
-        >
+        <div id="popUp">
           <DateRangePicker
             ranges={ranges}
             onChange={(item) => setRanges([item.selection])}
@@ -90,6 +79,6 @@ export function ButtonDate() {
           />
         </div>
       )}
-    </div>
+    </Container>
   );
 }

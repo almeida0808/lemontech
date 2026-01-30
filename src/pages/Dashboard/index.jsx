@@ -47,14 +47,15 @@ export function Dashboard() {
           <div id="evolucao-lucro">
             <div id="cabecalho">
               <i id="up" class="ph ph-trend-up"></i>
-
               <span>
                 <strong>Evolução do Lucro</strong>
                 <br />
                 Média: R$89/mês
               </span>
-
               <ButtonDate />
+            </div>
+            <div id="grafico-lucro">
+              <h1>TESTE</h1>
             </div>
           </div>
         </section>

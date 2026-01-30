@@ -80,7 +80,6 @@ export const Container = styled.div`
     #evolucao-lucro {
       #cabecalho {
         display: flex;
-
         #up {
           background-color: #21c45d33;
           font-size: 20px;
@@ -99,6 +98,15 @@ export const Container = styled.div`
         span {
           font-size: 14px;
         }
+
+        button {
+          margin-left: 138px;
+        }
+      }
+
+      #grafico-lucro {
+        width: 350px;
+        height: 300px;
       }
     }
   }
