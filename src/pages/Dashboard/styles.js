@@ -77,37 +77,50 @@ export const Container = styled.div`
   }
 
   #grafics {
+    #grafico-fake {
+      margin: 12px auto 0;
+      background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+      width: 350px;
+      height: 300px;
+    }
     #evolucao-lucro {
+      margin: 18px auto;
+      border-radius: 12px;
+      padding: 24px;
+      background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
       #cabecalho {
         display: flex;
-        #up {
-          background-color: #21c45d33;
-          font-size: 20px;
-          color: #21c45d;
+        justify-content: space-between;
+        #items {
+          display: flex;
+          align-items: center;
+          #up {
+            background-color: #21c45d33;
+            font-size: 20px;
+            color: #21c45d;
 
-          padding: 8px;
-          border-radius: 8px;
-          margin-right: 12px;
+            padding: 8px;
+            border-radius: 8px;
+          }
+          #title {
+            margin: 0 0 0 10px;
+            h3 {
+              font-size: 18px;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
         }
-
-        strong {
-          font-size: 18px;
-          margin-bottom: 10px;
-        }
-
-        span {
-          font-size: 14px;
-        }
-
-        button {
-          margin-left: 138px;
-        }
-      }
-
-      #grafico-lucro {
-        width: 350px;
-        height: 300px;
       }
     }
+
+    #vendas-vs-lucro {
+      padding: 24px;
+      border-radius: 12px;
+      background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    }
+
+    
   }
 `;

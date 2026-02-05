@@ -45,16 +45,27 @@ export function Dashboard() {
 
         <section id="grafics">
           <div id="evolucao-lucro">
+
             <div id="cabecalho">
-              <i id="up" class="ph ph-trend-up"></i>
-              <span>
-                <strong>Evolução do Lucro</strong>
-                <br />
-                Média: R$89/mês
-              </span>
+
+              <div id="items">
+                <i id="up" class="ph ph-trend-up"></i>
+                <div id="title">
+                  <h3>Evolução do Lucro</h3>
+                  <span>Média: R$89/mês</span>
+                </div>
+
+              </div>
               <ButtonDate />
             </div>
-            <div id="grafico-lucro">
+            <div id="grafico-fake">
+              <h1>TESTE</h1>
+            </div>
+          </div>
+
+          <div id="vendas-vs-lucro">
+            <h3>Vendas vs Lucro</h3>
+            <div id="grafico-fake">
               <h1>TESTE</h1>
             </div>
           </div>
