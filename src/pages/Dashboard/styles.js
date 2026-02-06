@@ -120,7 +120,5 @@ export const Container = styled.div`
       border-radius: 12px;
       background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
     }
-
-    
   }
 `;

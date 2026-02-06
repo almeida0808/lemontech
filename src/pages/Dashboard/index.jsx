@@ -4,6 +4,10 @@ import { Container } from "./styles";
 import { Header } from "../../components/Header";
 import { ButtonDate } from "../../components/ButtonDate";
 import { ButtonIcon } from "../../components/ButtonIcon";
+import { CardGraphics } from "../../components/CardGraphics";
+import { GraphicLucroMensal } from "../../components/GraphicLucroMensal";
+import { GraphicItemsMaisVendidos } from "../../components/GraphicItemsMaisVendidos";
+import { GraphicEntregasRetirada } from "../../components/GraphicEntregasRetirada";
 
 export function Dashboard() {
   return (
@@ -44,31 +48,17 @@ export function Dashboard() {
         </section>
 
         <section id="grafics">
-          <div id="evolucao-lucro">
+          <CardGraphics title={"Lucro Mensal"} subtitle={"Média: R$89/mês"}>
+            <GraphicLucroMensal />
+          </CardGraphics>
 
-            <div id="cabecalho">
+          <CardGraphics title={"Produtos mais vendidos"}>
+            <GraphicItemsMaisVendidos />
+          </CardGraphics>
 
-              <div id="items">
-                <i id="up" class="ph ph-trend-up"></i>
-                <div id="title">
-                  <h3>Evolução do Lucro</h3>
-                  <span>Média: R$89/mês</span>
-                </div>
-
-              </div>
-              <ButtonDate />
-            </div>
-            <div id="grafico-fake">
-              <h1>TESTE</h1>
-            </div>
-          </div>
-
-          <div id="vendas-vs-lucro">
-            <h3>Vendas vs Lucro</h3>
-            <div id="grafico-fake">
-              <h1>TESTE</h1>
-            </div>
-          </div>
+          <CardGraphics title={"Vendas por Canal"}>
+            <GraphicEntregasRetirada />
+          </CardGraphics>
         </section>
       </div>
     </Container>
