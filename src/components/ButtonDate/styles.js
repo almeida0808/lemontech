@@ -6,7 +6,7 @@ export const Container = styled.div`
   #dateButton {
     padding: 8px 12px;
     border-radius: 8px;
-    background: #1f2937;
+    background: rgba(56, 182, 255, 0.1);
     color: #fff;
     border: 1px solid #374151;
   }

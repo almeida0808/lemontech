@@ -1,7 +1,7 @@
 import { ButtonDate } from "../ButtonDate";
 import { Container } from "./styles";
 
-export function CardGraphics({ title, subtitle, children }) {
+export function CardDashboard({ title, subtitle, children }) {
   return (
     <Container>
       {subtitle ? (
@@ -21,7 +21,7 @@ export function CardGraphics({ title, subtitle, children }) {
         </div>
       )}
 
-      {children}
+      <div id="children">{children}</div>
     </Container>
   );
 }

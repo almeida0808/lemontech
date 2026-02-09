@@ -1,7 +1,7 @@
 export default {
   COLORS: {
     BACKGROUND_900: "#13111A",
-    BACKGROUND_800: "#191622",
+    BACKGROUND_800: "#0b0f1a",
     BACKGROUND_700: "#342e47ff",
 
     GRADIENT_GREEN:

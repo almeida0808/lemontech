@@ -4,10 +4,11 @@ import { Container } from "./styles";
 import { Header } from "../../components/Header";
 import { ButtonDate } from "../../components/ButtonDate";
 import { ButtonIcon } from "../../components/ButtonIcon";
-import { CardGraphics } from "../../components/CardGraphics";
+import { CardDashboard } from "../../components/CardDashboard";
 import { GraphicLucroMensal } from "../../components/GraphicLucroMensal";
 import { GraphicItemsMaisVendidos } from "../../components/GraphicItemsMaisVendidos";
 import { GraphicEntregasRetirada } from "../../components/GraphicEntregasRetirada";
+import { ItemCard } from "../../components/ItemsCard";
 
 export function Dashboard() {
   return (
@@ -43,22 +44,160 @@ export function Dashboard() {
           <CardMetric color="purple" name="Qtd. Vendida" icon="itemsSold" />
           <CardMetric color="orange" name="Ticket Médio" icon="ticket" />
           <CardMetric color="red" name="Custos de Produtos" icon="package" />
-          <CardMetric color="red" name="Gastos Operacionais" icon="percent" />
-          <CardMetric color="green" name="Margem Média" icon="wallet" />
+          <CardMetric
+            color="red-safe"
+            name="Gastos Operacionais"
+            icon="percent"
+          />
+          <CardMetric color="green-safe" name="Margem Média" icon="wallet" />
         </section>
 
         <section id="grafics">
-          <CardGraphics title={"Lucro Mensal"} subtitle={"Média: R$89/mês"}>
+          <CardDashboard title={"Lucro Mensal"} subtitle={"Média: R$89/mês"}>
             <GraphicLucroMensal />
-          </CardGraphics>
+          </CardDashboard>
 
-          <CardGraphics title={"Produtos mais vendidos"}>
+          <CardDashboard title={"Produtos mais vendidos"}>
             <GraphicItemsMaisVendidos />
-          </CardGraphics>
+          </CardDashboard>
 
-          <CardGraphics title={"Vendas por Canal"}>
+          <CardDashboard title={"Vendas por Canal"}>
             <GraphicEntregasRetirada />
-          </CardGraphics>
+          </CardDashboard>
+        </section>
+
+        <section id="outras-infos">
+          <CardDashboard class="vendas-recentes" title={"Vendas Recentes"}>
+            <div>
+              <ItemCard
+                lucro={"45,00"}
+                valor={"90,00"}
+                title={"Planta Bonsai"}
+                plataforma={"Facebook"}
+                data={"08/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"25,00"}
+                valor={"40,00"}
+                title={"Celular E7 Plus"}
+                plataforma={"Whatsapp"}
+                data={"05/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"86,00"}
+                valor={"155,00"}
+                title={"Lavadora Portatil"}
+                plataforma={"Facebook"}
+                data={"01/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"45,00"}
+                valor={"90,00"}
+                title={"Planta Bonsai"}
+                plataforma={"Facebook"}
+                data={"08/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"25,00"}
+                valor={"40,00"}
+                title={"Celular E7 Plus"}
+                plataforma={"Whatsapp"}
+                data={"05/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"86,00"}
+                valor={"155,00"}
+                title={"Lavadora Portatil"}
+                plataforma={"Facebook"}
+                data={"01/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"45,00"}
+                valor={"90,00"}
+                title={"Planta Bonsai"}
+                plataforma={"Facebook"}
+                data={"08/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"25,00"}
+                valor={"40,00"}
+                title={"Celular E7 Plus"}
+                plataforma={"Whatsapp"}
+                data={"05/02/2026"}
+              />{" "}
+              <ItemCard
+                lucro={"86,00"}
+                valor={"155,00"}
+                title={"Lavadora Portatil"}
+                plataforma={"Facebook"}
+                data={"01/02/2026"}
+              />
+            </div>
+          </CardDashboard>
+          <CardDashboard title={"Estoque"}>
+            <div>
+              <ItemCard
+                title={"Lavadora Portatil"}
+                categoria={"Utilidades"}
+                unidades={"12"}
+              />{" "}
+              <ItemCard
+                title={"Fone Bluetooth XT53"}
+                categoria={"Fone"}
+                unidades={"5"}
+              />{" "}
+              <ItemCard
+                title={"Carrinho"}
+                categoria={"Decoração"}
+                unidades={"9"}
+              />
+              <ItemCard
+                title={"Lavadora Portatil"}
+                categoria={"Utilidades"}
+                unidades={"12"}
+              />{" "}
+              <ItemCard
+                title={"Fone Bluetooth XT53"}
+                categoria={"Fone"}
+                unidades={"5"}
+              />{" "}
+              <ItemCard
+                title={"Carrinho"}
+                categoria={"Decoração"}
+                unidades={"9"}
+              />
+              <ItemCard
+                title={"Lavadora Portatil"}
+                categoria={"Utilidades"}
+                unidades={"12"}
+              />{" "}
+              <ItemCard
+                title={"Fone Bluetooth XT53"}
+                categoria={"Fone"}
+                unidades={"5"}
+              />{" "}
+              <ItemCard
+                title={"Carrinho"}
+                categoria={"Decoração"}
+                unidades={"9"}
+              />
+              <ItemCard
+                title={"Lavadora Portatil"}
+                categoria={"Utilidades"}
+                unidades={"12"}
+              />{" "}
+              <ItemCard
+                title={"Fone Bluetooth XT53"}
+                categoria={"Fone"}
+                unidades={"5"}
+              />{" "}
+              <ItemCard
+                title={"Carrinho"}
+                categoria={"Decoração"}
+                unidades={"9"}
+              />
+            </div>
+          </CardDashboard>
         </section>
       </div>
     </Container>

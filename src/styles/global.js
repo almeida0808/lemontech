@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import bgImage from "../images/maviAslan.png";
 
 export default createGlobalStyle`
 *{
@@ -10,9 +11,22 @@ export default createGlobalStyle`
 }
 
 body{
-    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-    
+  background-image: url(${bgImage});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
+
+ body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(11, 15, 26, 0.95); /* #0b0f1a com opacidade */
+    z-index: -1;
+  }
 
 body,input,button,textarea{
     font-family: "Inter", sans-serif;
