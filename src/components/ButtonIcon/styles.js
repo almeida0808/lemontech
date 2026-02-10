@@ -8,6 +8,10 @@ export const Container = styled.button`
   background: none;
   color: white;
 
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
   i {
     font-size: 14px;
   }

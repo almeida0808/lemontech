@@ -9,6 +9,7 @@ import { GraphicLucroMensal } from "../../components/GraphicLucroMensal";
 import { GraphicItemsMaisVendidos } from "../../components/GraphicItemsMaisVendidos";
 import { GraphicEntregasRetirada } from "../../components/GraphicEntregasRetirada";
 import { ItemCard } from "../../components/ItemsCard";
+import { Toggle } from "../../components/ButtonToggle";
 
 export function Dashboard() {
   return (
@@ -22,19 +23,19 @@ export function Dashboard() {
           </div>
 
           <div id="buttons">
-            <ButtonIcon />
+            <ButtonIcon icon="itemsSold" name="Venda" />
             <div id="separator" />
-            <ButtonIcon />
+            <ButtonDate />
             <div id="separator" />
-            <ButtonIcon />
+            <ButtonIcon id="compra" icon="package" name="Produto" />
           </div>
           <div id="gastos-operacionais">
             <i class="ph ph-wallet"></i>
-            <div>
+            <div id="title">
               <p>Incluir Gastos Operacionais no Lucro</p>
               <span>Subtrai despesas operacionais no lucro liquido</span>
             </div>
-            <button>on</button>
+            <Toggle />
           </div>
         </section>
 

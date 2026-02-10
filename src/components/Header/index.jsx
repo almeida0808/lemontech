@@ -1,9 +1,23 @@
 import { Container } from "./styles";
+import logo from "../../images/LOGO.svg";
+import { Menu } from "lucide-react";
+import { MenuMobile } from "../MenuMobile";
+import { useState } from "react";
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+
+  function toggleMenu() {
+    setOpen((prev) => !prev);
+  }
   return (
     <Container>
-      <h1>Lemon tech</h1>
+      <img src={logo} alt="" />
+
+      <button className="menu" onClick={toggleMenu}>
+        <Menu size={28} />
+      </button>
+      {open && <MenuMobile onClose={toggleMenu} />}
     </Container>
   );
 }

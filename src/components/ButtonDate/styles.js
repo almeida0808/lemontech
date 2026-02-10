@@ -4,11 +4,16 @@ export const Container = styled.div`
   position: relative;
 
   #dateButton {
-    padding: 8px 12px;
+    border: 1px solid rgba(43, 59, 85, 0.94);
     border-radius: 8px;
-    background: rgba(56, 182, 255, 0.1);
-    color: #fff;
-    border: 1px solid #374151;
+    padding: 8px 12px;
+    height: max-content;
+    background: none;
+    color: white;
+
+    i {
+      font-size: 14px;
+    }
   }
 
   #popUp {

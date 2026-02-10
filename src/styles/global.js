@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import bgImage from "../images/maviAslan.png";
+import bgImage from "../images/maviAslan1.png";
 
 export default createGlobalStyle`
 *{
@@ -24,7 +24,7 @@ body{
     position: fixed;
     inset: 0;
 
-    background: rgba(11, 15, 26, 0.95); /* #0b0f1a com opacidade */
+    background: rgba(11, 15, 26, 0.09); /* #0b0f1a com opacidade */
     z-index: -1;
   }
 

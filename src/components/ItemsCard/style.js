@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 12px;
-  border-radius: 8px;
   max-height: 60px;
   margin-bottom: 12px;
 
@@ -13,7 +12,6 @@ export const Container = styled.div`
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px;
 
   box-shadow:

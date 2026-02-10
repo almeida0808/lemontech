@@ -26,8 +26,6 @@ export const Container = styled.div`
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 0 0 1px rgba(56, 182, 255, 0.35),
       0 12px 30px rgba(0, 0, 0, 0.45);
-
-    transform: translateY(-2px);
   }
   #children {
     max-height: 450px;
