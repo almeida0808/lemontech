@@ -34,7 +34,6 @@ export const Container = styled.div`
   div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
     align-items: center;
     h3 {
       font-weight: 500;

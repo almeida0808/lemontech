@@ -10,32 +10,83 @@ import { GraphicItemsMaisVendidos } from "../../components/GraphicItemsMaisVendi
 import { GraphicEntregasRetirada } from "../../components/GraphicEntregasRetirada";
 import { ItemCard } from "../../components/ItemsCard";
 import { Toggle } from "../../components/ButtonToggle";
+import { useEffect, useState } from "react";
+import { Sidebar } from "lucide-react";
+import { MenuDesktop } from "../../components/MenuDesktop";
+import { startOfDay, endOfDay } from "date-fns";
+
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return isDesktop;
+}
 
 export function Dashboard() {
+  const isDesktop = useIsDesktop();
+  const [isOperatingExpenses, setIsOperatingExpenses] = useState(false);
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate: startOfDay(new Date()),
+      endDate: endOfDay(new Date()),
+      key: "selection",
+    },
+  ]);
+
   return (
     <Container>
-      <Header />
+      {isDesktop ? <MenuDesktop /> : <Header />}
+
       <div id="app">
         <section>
           <div id="title">
-            <h1>Dashboard</h1>
-            <span>Visão geral do seu négocio</span>
+            <div id="dashboardName">
+              <h1>Dashboard</h1>
+              <span>Visão geral do seu négocio</span>
+            </div>
+            {isDesktop && (
+              <div id="buttons">
+                <ButtonIcon icon="itemsSold" name="Nova Venda" />
+                <ButtonIcon id="compra" icon="package" name="Novo Produto" />
+                <ButtonDate
+                  isDesktop={isDesktop}
+                  ranges={dateRange}
+                  setRanges={setDateRange}
+                />
+              </div>
+            )}
           </div>
 
-          <div id="buttons">
-            <ButtonIcon icon="itemsSold" name="Venda" />
-            <div id="separator" />
-            <ButtonDate />
-            <div id="separator" />
-            <ButtonIcon id="compra" icon="package" name="Produto" />
-          </div>
+          {!isDesktop && (
+            <div id="buttons">
+              <ButtonIcon icon="itemsSold" name="Venda" />
+              <div id="separator" />
+              <ButtonDate
+                isDesktop={isDesktop}
+                ranges={dateRange}
+                setRanges={setDateRange}
+              />
+              <div id="separator" />
+              <ButtonIcon id="compra" icon="package" name="Produto" />
+            </div>
+          )}
+
           <div id="gastos-operacionais">
-            <i class="ph ph-wallet"></i>
+            <i className="ph ph-wallet"></i>
             <div id="title">
               <p>Incluir Gastos Operacionais no Lucro</p>
               <span>Subtrai despesas operacionais no lucro liquido</span>
             </div>
-            <Toggle />
+            <Toggle
+              isOn={isOperatingExpenses}
+              onToggle={() => setIsOperatingExpenses((prev) => !prev)}
+            />
           </div>
         </section>
 
@@ -45,30 +96,36 @@ export function Dashboard() {
           <CardMetric color="purple" name="Qtd. Vendida" icon="itemsSold" />
           <CardMetric color="orange" name="Ticket Médio" icon="ticket" />
           <CardMetric color="red" name="Custos de Produtos" icon="package" />
-          <CardMetric
-            color="red-safe"
-            name="Gastos Operacionais"
-            icon="percent"
-          />
+          {isOperatingExpenses && (
+            <CardMetric
+              color="red-safe"
+              name="Gastos Operacionais"
+              icon="percent"
+            />
+          )}
           <CardMetric color="green-safe" name="Margem Média" icon="wallet" />
         </section>
 
         <section id="grafics">
-          <CardDashboard title={"Lucro Mensal"} subtitle={"Média: R$89/mês"}>
+          <CardDashboard
+            area="lucro"
+            title={"Lucro Mensal"}
+            subtitle={"Média: R$89/mês"}
+          >
             <GraphicLucroMensal />
           </CardDashboard>
 
-          <CardDashboard title={"Produtos mais vendidos"}>
+          <CardDashboard area="itemsVendidos" title={"Produtos mais vendidos"}>
             <GraphicItemsMaisVendidos />
           </CardDashboard>
 
-          <CardDashboard title={"Vendas por Canal"}>
+          <CardDashboard area="entregasRetirada" title={"Vendas por Canal"}>
             <GraphicEntregasRetirada />
           </CardDashboard>
         </section>
 
         <section id="outras-infos">
-          <CardDashboard class="vendas-recentes" title={"Vendas Recentes"}>
+          <CardDashboard className="vendas-recentes" title={"Vendas Recentes"}>
             <div>
               <ItemCard
                 lucro={"45,00"}

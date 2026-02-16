@@ -19,6 +19,8 @@ export const Container = styled.div`
   transition: all 0.3s ease;
   margin-bottom: 18px;
 
+  ${({ area }) => area && `grid-area: ${area};`}
+
   &:hover {
     border-color: rgba(56, 182, 255, 0.45);
 

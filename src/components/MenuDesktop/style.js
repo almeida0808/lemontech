@@ -1,12 +1,11 @@
-import styled from "styled-components";
 import bgImage from "../../images/maviAslan1.png";
+import styled from "styled-components";
 
 export const Container = styled.div`
-  position: fixed;
   inset: 0;
   height: 100vh;
 
-  background: rgba(0, 0, 0, 0.57); /* 🔥 mais escuro */
+  background: rgba(0, 0, 0, 0.6); /* 🔥 mais escuro */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -14,37 +13,27 @@ export const Container = styled.div`
 
   display: flex;
 
-  opacity: ${({ $open }) => ($open ? 1 : 0)};
-  pointer-events: ${({ $open }) => ($open ? "all" : "none")};
-
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-
   .drawer {
-    width: 70%;
     height: 100vh;
+    width: 100%;
 
-    background-image: url(${bgImage});
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.75)), url(${bgImage});
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 
     border-right: 1px solid rgba(255, 253, 253, 0.12);
-
-    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.7);
+    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.47);
 
     transition: 2.3s;
     padding: 24px;
-
-    transform: ${({ $open }) =>
-      $open ? "translateX(0)" : "translateX(-100%)"};
-
-    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   img {
-    height: 85px;
-    margin-bottom: px;
+    height: 100px;
   }
   nav {
     border-top: 1px solid rgba(255, 253, 253, 0.18);

@@ -17,7 +17,7 @@ export function Header() {
       <button className="menu" onClick={toggleMenu}>
         <Menu size={28} />
       </button>
-      {open && <MenuMobile onClose={toggleMenu} />}
+      <MenuMobile open={open} onClose={toggleMenu} />
     </Container>
   );
 }

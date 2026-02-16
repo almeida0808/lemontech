@@ -1,19 +1,15 @@
-import { Container } from "./styles";
+import { Container } from "./style";
 import logo from "../../images/LOGO.svg";
 import { ItemMenu } from "../ItemMenu";
 
-export function MenuMobile({ open, onClose }) {
+export function MenuDesktop() {
   return (
-    <Container $open={open} className="overlay" onClick={onClose}>
-      <aside className="drawer" onClick={(e) => e.stopPropagation()}>
+    <Container className="overlay">
+      <aside className="drawer">
         <img src="../" alt="" />
 
         <img src={logo} alt="" />
         <nav>
-          <ItemMenu name="TESTANDO" />
-          <ItemMenu name="TESTANDO" />
-          <ItemMenu name="TESTANDO" />
-          <ItemMenu name="TESTANDO" />
           <a href="">Dashboard</a>
           <a href="">Produtos</a>
           <a href="">Categoria</a>

@@ -13,6 +13,7 @@ export const Container = styled.button`
   align-items: center;
 
   i {
+    margin-top: 0.5px;
     font-size: 14px;
   }
 `;

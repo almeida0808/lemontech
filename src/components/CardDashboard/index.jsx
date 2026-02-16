@@ -1,9 +1,9 @@
 import { ButtonDate } from "../ButtonDate";
 import { Container } from "./styles";
 
-export function CardDashboard({ title, subtitle, children }) {
+export function CardDashboard({ title, subtitle, children, area }) {
   return (
-    <Container>
+    <Container area={area}>
       {subtitle ? (
         <div id="cabecalho">
           <div id="items">

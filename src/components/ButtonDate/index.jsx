@@ -15,16 +15,8 @@ import "react-date-range/dist/theme/default.css";
 
 import { Container } from "./styles";
 
-export function ButtonDate() {
+export function ButtonDate({ ranges, setRanges, isDesktop }) {
   const [open, setOpen] = useState(false);
-
-  const [ranges, setRanges] = useState([
-    {
-      startDate: startOfDay(new Date()),
-      endDate: endOfDay(new Date()),
-      key: "selection",
-    },
-  ]);
 
   const staticRanges = createStaticRanges([
     {
@@ -58,11 +50,13 @@ export function ButtonDate() {
   ]);
 
   return (
-    <Container style={{}}>
+    <Container>
       <button id="dateButton" onClick={() => setOpen(!open)}>
-        📅
-        {/*  {ranges[0].startDate.toLocaleDateString()} -{" "}
-        {ranges[0].endDate.toLocaleDateString()} */}
+        📅{" "}
+        {isDesktop &&
+          ranges?.[0]?.startDate &&
+          ranges?.[0]?.endDate &&
+          `${ranges[0].startDate.toLocaleDateString()} - ${ranges[0].endDate.toLocaleDateString()}`}
       </button>
 
       {open && (
