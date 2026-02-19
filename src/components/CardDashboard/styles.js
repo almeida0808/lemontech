@@ -17,7 +17,6 @@ export const Container = styled.div`
     0 0 0 rgba(56, 182, 255, 0);
 
   transition: all 0.3s ease;
-  margin-bottom: 18px;
 
   ${({ area }) => area && `grid-area: ${area};`}
 
@@ -58,6 +57,8 @@ export const Container = styled.div`
       }
       #title {
         margin: 0 0 0 10px;
+        display: flex;
+        flex-direction: column;
         h3 {
           font-size: 18px;
         }

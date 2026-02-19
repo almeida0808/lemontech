@@ -29,7 +29,6 @@ export function ItemCard({
         </>
       ) : (
         <>
-          {" "}
           <div id="title">
             <strong>{title}</strong>
             <span>{categoria}</span>

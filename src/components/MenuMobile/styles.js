@@ -50,17 +50,6 @@ export const Container = styled.div`
     border-top: 1px solid rgba(255, 253, 253, 0.18);
     display: flex;
     flex-direction: column;
-    a {
-      display: flex;
-      align-items: first baseline;
-      width: 100%;
-      font-size: 16px;
-      padding: 12px;
-      text-decoration: none;
-      border-radius: 12px;
-      color: #f8fafcff;
-      transition: 0.4s;
-    }
 
     a:hover {
       cursor: pointer;

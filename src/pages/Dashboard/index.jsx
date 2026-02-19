@@ -16,10 +16,10 @@ import { MenuDesktop } from "../../components/MenuDesktop";
 import { startOfDay, endOfDay } from "date-fns";
 
 function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1075);
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
+      setIsDesktop(window.innerWidth >= 1075);
     };
 
     window.addEventListener("resize", handleResize);

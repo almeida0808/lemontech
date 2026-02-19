@@ -13,8 +13,6 @@ export const Container = styled.div`
 
   color: white;
 
-  overflow: hidden;
-
   #app {
     margin-top: 90px;
     padding: 16px;
@@ -23,7 +21,6 @@ export const Container = styled.div`
       margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
 
       #buttons {
         display: flex;
@@ -116,13 +113,20 @@ export const Container = styled.div`
     }
 
     #cards {
-      div {
+      display: grid;
+      gap: 18px;
+
+      div:last-child {
         margin-bottom: 18px;
       }
     }
   }
 
   #grafics {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     #evolucao-lucro {
       margin: 18px auto;
       border-radius: 12px;
@@ -176,6 +180,9 @@ export const Container = styled.div`
   }
 
   #outras-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     .vendas-recentes {
       background-color: red;
       height: 200px;
@@ -184,7 +191,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1075px) {
     display: grid;
     grid-template-columns: 280px auto;
 
@@ -195,14 +202,8 @@ export const Container = styled.div`
     }
 
     #cards {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-
-      @media (min-width: 1024px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 `;
