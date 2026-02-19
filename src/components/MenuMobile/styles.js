@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bgImage from "../../images/maviAslan1.png";
+import bgImage from "../../images/bg-desktop.png";
 
 export const Container = styled.div`
   position: fixed;

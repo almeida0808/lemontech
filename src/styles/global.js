@@ -1,32 +1,38 @@
 import { createGlobalStyle } from "styled-components";
-import bgImage from "../images/maviAslan1.png";
+import bgImage from "../images/bg-desktop.png";
 
 export default createGlobalStyle`
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body{
-  background-image: url(${bgImage});
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-
+  position: relative;
 }
 
- body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
 
-    background: rgba(11, 15, 26, 0.09); /* #0b0f1a com opacidade */
-    z-index: -1;
-  }
+  background-image: url(${bgImage});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(11, 15, 26, 0.09);
+  z-index: -1;
+}
 
 body,input,button,textarea{
     font-family: "Inter", sans-serif;

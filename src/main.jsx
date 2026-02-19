@@ -7,12 +7,13 @@ import theme from "./styles/theme";
 import GlobalStyles from "./styles/global";
 
 import { Dashboard } from "./pages/Dashboard";
+import { Products } from "./pages/Products";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Dashboard />
+      <Products />
     </ThemeProvider>
   </StrictMode>,
 );

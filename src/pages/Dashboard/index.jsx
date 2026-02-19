@@ -10,23 +10,10 @@ import { GraphicItemsMaisVendidos } from "../../components/GraphicItemsMaisVendi
 import { GraphicEntregasRetirada } from "../../components/GraphicEntregasRetirada";
 import { ItemCard } from "../../components/ItemsCard";
 import { Toggle } from "../../components/ButtonToggle";
-import { useEffect, useState } from "react";
-import { Sidebar } from "lucide-react";
+import { useState } from "react";
 import { MenuDesktop } from "../../components/MenuDesktop";
 import { startOfDay, endOfDay } from "date-fns";
-
-function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1075);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1075);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return isDesktop;
-}
+import { useIsDesktop } from "../../Hooks/useIsDesktop";
 
 export function Dashboard() {
   const isDesktop = useIsDesktop();
@@ -53,7 +40,7 @@ export function Dashboard() {
             {isDesktop && (
               <div id="buttons">
                 <ButtonIcon icon="itemsSold" name="Nova Venda" />
-                <ButtonIcon id="compra" icon="package" name="Novo Produto" />
+                <ButtonIcon icon="package" name="Novo Produto" />
                 <ButtonDate
                   isDesktop={isDesktop}
                   ranges={dateRange}

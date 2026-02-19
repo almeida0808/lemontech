@@ -1,4 +1,4 @@
-import bgImage from "../../images/maviAslan1.png";
+import bgImage from "../../images/bg-desktop.png";
 import styled from "styled-components";
 
 export const Container = styled.div`
